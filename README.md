@@ -27,7 +27,7 @@ $ cd face-age-classification/
 
 ### 3. Training
 ```bash
-$ python main.py --mode test --image_dir cacd2000_224 --crop_size 224 --image_size 224 \
+$ python main.py --mode train --image_dir cacd2000_224 --crop_size 224 --image_size 224 \
                  --gpu_ids 0 --batch_size 64 --pretrain True --log_dir cacd2000_cls/logs \
                  --model_save_dir cacd2000_cls/models --result_dir cacd2000_cls/results
 ```
