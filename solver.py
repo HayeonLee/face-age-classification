@@ -9,7 +9,7 @@ import torch.backends.cudnn as cudnn
 from torch.optim import lr_scheduler
 
 from resnet import *
-from visdom import Visdom
+#from visdom import Visdom
 import time
 import datetime
 
@@ -67,32 +67,32 @@ class Solver(object):
         # Build the model and visdom.
         self.build_model(config)
         
-        if self.use_visdom:
-            self.viz = Visdom()
-            self.loss_plot = self.viz.line(Y=torch.Tensor([0.]), 
-                                           X=torch.Tensor([0.]),
-                                           opts = dict(title = 'Loss for ' +
-                                                       self.model_name,
-                                                       legend=[self.model_name,],
-                                                       xlabel = 'iter',
-                                                       xtickmin = 0,
-                                                       xtickmax = 200000,
-                                                       ylabel = 'Loss',
-                                                       ytickmin = 0,
-                                                       ytickmax = 6,
-                                                   ),)
-            self.acc_plot = self.viz.line(Y=torch.Tensor([0.]),
-                                          X=torch.Tensor([0.]),
-                                          opts = dict(title = 'Test accurcay for '
-                                                      + self.model_name,
-                                                      legend=[self.model_name,],
-                                                      xlabel = 'epoch',
-                                                      xtickmin = 0,
-                                                      xtickmax = 200,
-                                                      ylabel = 'Accuracy',
-                                                      ytickmin = 0,
-                                                      ytickmax = 100,
-                                                 ),)            
+#         if self.use_visdom:
+#             self.viz = Visdom()
+#             self.loss_plot = self.viz.line(Y=torch.Tensor([0.]), 
+#                                            X=torch.Tensor([0.]),
+#                                            opts = dict(title = 'Loss for ' +
+#                                                        self.model_name,
+#                                                        legend=[self.model_name,],
+#                                                        xlabel = 'iter',
+#                                                        xtickmin = 0,
+#                                                        xtickmax = 200000,
+#                                                        ylabel = 'Loss',
+#                                                        ytickmin = 0,
+#                                                        ytickmax = 6,
+#                                                    ),)
+#             self.acc_plot = self.viz.line(Y=torch.Tensor([0.]),
+#                                           X=torch.Tensor([0.]),
+#                                           opts = dict(title = 'Test accurcay for '
+#                                                       + self.model_name,
+#                                                       legend=[self.model_name,],
+#                                                       xlabel = 'epoch',
+#                                                       xtickmin = 0,
+#                                                       xtickmax = 200,
+#                                                       ylabel = 'Accuracy',
+#                                                       ytickmin = 0,
+#                                                       ytickmax = 100,
+#                                                  ),)            
 
     
     def build_model(self, config):
@@ -206,11 +206,11 @@ class Solver(object):
                     log += ", {}: {:.4f}".format(tag, value)
                 print(log)
                 
-                self.viz.line(Y=torch.Tensor([value]), 
-                         X=torch.Tensor([(i + 1)]), 
-                         win=self.loss_plot, 
-                         update='append',
-                        )
+#                 self.viz.line(Y=torch.Tensor([value]), 
+#                          X=torch.Tensor([(i + 1)]), 
+#                          win=self.loss_plot, 
+#                          update='append',
+#                         )
             
             # Print the predicted labels and fixed images for debugging.
             # later
@@ -265,11 +265,11 @@ class Solver(object):
         if valid_acc.item() > self.best_acc:
             self.best_acc = valid_acc
         print('Valid accuracy: {}, Best accuracy: {}'.format(valid_acc.item(), self.best_acc))
-        self.viz.line(Y=torch.Tensor([valid_acc.item()]), 
-                 X=torch.Tensor([(self.resume_iters)]), 
-                 win=self.acc_plot, 
-                 update='append',
-                )
+#         self.viz.line(Y=torch.Tensor([valid_acc.item()]), 
+#                  X=torch.Tensor([(self.resume_iters)]), 
+#                  win=self.acc_plot, 
+#                  update='append',
+#                 )
     
     
 #     def test(self):

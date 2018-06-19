@@ -55,9 +55,9 @@ $ python main.py --mode test --image_dir cacd2000_224 --crop_size 224 --image_si
 
 ## Results
 
-<p align="center"><img width="70%" src="jpg/125.png"/></p>
+<p align="center"><img width="70%" src="png/125.png"/></p>
 
-<p align="center"><img width="70%" src="jpg/107.png"/></p>
+<p align="center"><img width="70%" src="png/107.png"/></p>
 
 
 <br/>
