@@ -18,7 +18,12 @@ $ cd face-age-classification/
 ```
 
 ### 2. Downloading the dataset
-Download [the Cross-Age Celebrity Dataset (CACD) dataset](http://bcsiriuschen.github.io/CARC/)
+(1) Download [the Cross-Age Celebrity Dataset (CACD) dataset](http://bcsiriuschen.github.io/CARC/) <br/>
+(2) Divide images into each generation [10s/20s/30s/40s/50s/60s] 
+    (I used regular experssion)<br/>
+(3) For each generation, divide images into train and test dataset 
+    (I used 10% of images of each generation as the test images)<br/>
+(4) Move dataset to cacd2000_224 folder by refering the folder structure 
 
 ### 3. Training
 ```bash
@@ -28,12 +33,7 @@ $ python main.py --mode test --image_dir cacd2000_224 --crop_size 224 --image_si
 ```
 
 ### 4. Pretrained model
-(1) Download [the pretrained model checkpoint](https://drive.google.com/open?id=1TXfHzTEzWCHhlw1BnuB8LmfOrigMIKo0) to test the model
-(2) Divide images into each generation [10s/20s/30s/40s/50s/60s] 
-    (I used regular experssion)
-(3) For each generation, divide images into train and test dataset 
-    (I used 10% of images of each generation as the test images) 
-(4) Move dataset to cacd2000_224 folder by refering the folder structure 
+Download [the pretrained model checkpoint](https://drive.google.com/open?id=1TXfHzTEzWCHhlw1BnuB8LmfOrigMIKo0) to test the model
 ```bash
 $ mv 104000.ckpt cacd2000_cls/models/
 ```
