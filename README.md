@@ -28,7 +28,7 @@ $ python main.py --mode test --image_dir cacd2000_224 --crop_size 224 --image_si
 ```
 
 ### 4. Pretrained model
-Download a pretrained model [checkpoint](https://drive.google.com/open?id=1TXfHzTEzWCHhlw1BnuB8LmfOrigMIKo0) to test the model
+Download [the pretrained model checkpoint](https://drive.google.com/open?id=1TXfHzTEzWCHhlw1BnuB8LmfOrigMIKo0) to test the model
 ```bash
 $ mv 104000.ckpt cacd2000_cls/models/
 ```
