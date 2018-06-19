@@ -1,5 +1,5 @@
 ## Face age classification
-Resnet50 based simple deep learning model to classifiy face age on dataset Cross-Age Celebrity Dataset (CACD)
+Resnet50 based simple deep learning model to classifiy face age(generation) on dataset Cross-Age Celebrity Dataset (CACD)
 
 <br/>
 
@@ -28,7 +28,12 @@ $ python main.py --mode test --image_dir cacd2000_224 --crop_size 224 --image_si
 ```
 
 ### 4. Pretrained model
-Download [the pretrained model checkpoint](https://drive.google.com/open?id=1TXfHzTEzWCHhlw1BnuB8LmfOrigMIKo0) to test the model
+(1) Download [the pretrained model checkpoint](https://drive.google.com/open?id=1TXfHzTEzWCHhlw1BnuB8LmfOrigMIKo0) to test the model
+(2) Divide images into each generation [10s/20s/30s/40s/50s/60s] 
+    (I used regular experssion)
+(3) For each generation, divide images into train and test dataset 
+    (I used 10% of images of each generation as the test images) 
+(4) Move dataset to cacd2000_224 folder by refering the folder structure 
 ```bash
 $ mv 104000.ckpt cacd2000_cls/models/
 ```
